@@ -61,7 +61,7 @@ result = response['output']['message']['content'][0]['text']
 
 response2 = bedrock.converse(
     messages= [ {"role": "user", "content": [{
-        "text": f"Here is a JSON object containing analytical data: ```json {result} ``` Please analyze the structure and contents, and generate appropriate matplotlib graphs based on the available information. Include titles, axis labels, and comments in the Python code. Skip any sections that do not contain graphable data. ONLY RETURN MATPLOTLIB CODE nothing else."
+        "text": f"Here is a JSON object containing analytical data: ```json {result} ``` Please analyze the structure and contents, and generate the following matplotlib graphs based on the available information. A line graph of the number of distinct emails as they change over time for each partner being with legend showing a line for each partner. A box and whicker graph of the confidence level we have for each partner. A box and whisker graph displaying the percent change in the number of emails as they change per partner over time.  Include titles, axis labels, and comments in the Python code for all graphs into one figure. Skip any sections that do not contain graphable data. ONLY RETURN MATPLOTLIB CODE nothing else."
 
     }
     ]} ],
